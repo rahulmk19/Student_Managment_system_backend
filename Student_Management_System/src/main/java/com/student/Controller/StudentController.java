@@ -58,7 +58,10 @@ public class StudentController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-
+		@GetMapping("/")
+			public String getWelcome() {
+				Return "Welcome to student management system";
+			}
 	@PutMapping("/student/{id}")
 	public ResponseEntity<Student> updateStudent(@PathVariable Integer id, @RequestBody Student updatedStudent) {
 		try {
